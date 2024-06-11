@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Year;
+use App\Models\FatherOccupation;
 
-class YearController extends Controller
+class FatherOccupationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $years = Year::all();
-        foreach($years as $sal){
-            $sal->label=$sal->year;
+        $FatherOccupation = FatherOccupation::all();
+        foreach($FatherOccupations as $sal){
+            $sal->label=$sal->FatherOccupation;
         }
-        return response()->json($years,200);
+        return response()->json($FatherOccupations,200);
         //
     }
 
@@ -27,10 +27,10 @@ class YearController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "year"=> "string|required",
+            "FatherOccupation"=> "string|required",
         ]);
-        $year = Year::create($request->all());
-        return response()->json($year,200);
+        $FatherOccupation = FatherOccupation::create($request->all());
+        return response()->json($FatherOccupation,200);
         //
     }
 
