@@ -26,7 +26,7 @@ class GenderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "Gender"=> "string|required",
+            "name"=> "string|required",
         ]);
         $Gender = Gender::create($request->all());
         return response()->json($Gender,200);
