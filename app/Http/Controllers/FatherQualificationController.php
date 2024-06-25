@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Gender;
+use App\Models\FatherQualification;
 
-class GenderController extends Controller
+class FatherQualificationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $Genders = Gender::all();
-        foreach($Genders as $sal){
-            $sal->label=$sal->Gender;
+        $FatherQualifications = FatherQualification::all();
+        foreach($FatherQualifications as $sal){
+            $sal->label=$sal->FatherQualification;
         }
-        return response()->json($Genders,200);
+        return response()->json($FatherQualifications,200);
         //
     }
 
@@ -29,8 +29,8 @@ class GenderController extends Controller
         $request->validate([
             "name"=> "string|required",
         ]);
-        $Gender = Gender::create($request->all());
-        return response()->json($Gender,200);
+        $FatherQualification =FatherQualification::create($request->all());
+        return response()->json($FatherQualification,200);
         //
     }
 

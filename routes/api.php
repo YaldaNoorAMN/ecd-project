@@ -7,6 +7,10 @@ use App\Http\Controllers\YearController;
 use App\Http\Controllers\MonthController;
 use App\Http\Controllers\GenderController;
 use App\Http\Controllers\FatherOccupationController;
+use App\Http\Controllers\FatherQualificationController;
+use App\Http\Controllers\MotherOccupationController;
+use App\Http\Controllers\MotherQualificationController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,6 +30,10 @@ Route::prefix('ECD')->group(function () {
         'Month' => MonthController::class,
         'Gender' => GenderController::class,
         'FatherOccupation' => FatherOccupationController::class,
+        'FatherQualification' => FatherQualificationController::class,
+        'MotherOccupation' => MotherOccupationController::class,
+        'MotherQualification' => MotherQualificationController::class,
+        
     ]);
 
 
